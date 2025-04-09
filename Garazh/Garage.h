@@ -1,28 +1,40 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <vector>
 
-class Vehicale 
+class Vehicle 
 {
+protected:
 	std::string mark;
 	int mileage;
 public:
-	Vehicale();
-	void info();
+	Vehicle();
+	void info() const;
 };
 
-class Car : public Vehicale
+class Car : public Vehicle
 {
 	bool is_active;
 public:
 	Car();
-	void info();
+	void info() const;
 };
 
-class Bus : public Vehicale
+class Bus : public Vehicle
 {
 	int capacity;
 public:
 	Bus();
-	void info();
+	void info() const;
+};
+
+
+class Garage
+{
+	std::vector<Vehicle*> vehicles;
+public:
+	//~Garage();
+	void park(Vehicle* vehicle);
+	void printVehicle() const;
 };
