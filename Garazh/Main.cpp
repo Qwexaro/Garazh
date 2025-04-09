@@ -9,5 +9,7 @@ int main()
 
 	garage.park(bus);
 	garage.park(car);
+
+	garage.printVehicle();
 	return 0;
 }
