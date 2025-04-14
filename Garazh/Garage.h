@@ -10,7 +10,8 @@ protected:
 	int mileage;
 public:
 	Vehicle();
-	void info() const;
+	Vehicle(std::string mark, int mileage);
+	virtual void info() const;
 };
 
 class Car : public Vehicle
@@ -18,6 +19,7 @@ class Car : public Vehicle
 	bool is_active;
 public:
 	Car();
+	Car(bool is_active);
 	void info() const;
 };
 
@@ -26,15 +28,16 @@ class Bus : public Vehicle
 	int capacity;
 public:
 	Bus();
+	Bus(int capacity);
 	void info() const;
 };
 
 
 class Garage
 {
-	std::vector<Vehicle*> vehicles;
+	std::vector<std::shared_ptr<Vehicle>> vehicles;
 public:
 	//~Garage();
-	void park(Vehicle* vehicle);
-	void printVehicle() const;
+	void park(const std::shared_ptr<Vehicle>& vehicle);
+	void printVehicles() const;
 };
