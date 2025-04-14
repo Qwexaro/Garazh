@@ -6,14 +6,13 @@ int main()
 
 	std::shared_ptr<Vehicle> bus = std::make_shared<Bus>(100);
 	std::shared_ptr<Vehicle> car = std::make_shared<Car>(true);
-
-	std::shared_ptr<Vehicle> bike = std::make_shared<Vehicle>("Bike", 120);
+	//std::shared_ptr<Vehicle> bike = std::make_shared<Vehicle>("Bike", 120);
 
 	garage.park(bus);
 	garage.park(car);
-	garage.park(bike);
+	//garage.park(bike);
 
-	garage.printVehicle();
+	garage.printVehicles();
 
 	return 0;
 }

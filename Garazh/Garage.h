@@ -39,5 +39,5 @@ class Garage
 public:
 	//~Garage();
 	void park(const std::shared_ptr<Vehicle>& vehicle);
-	void printVehicle() const;
+	void printVehicles() const;
 };

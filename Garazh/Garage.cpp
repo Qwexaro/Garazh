@@ -22,17 +22,19 @@ Bus::Bus(int _capacity) : Bus()
 
 void Vehicle::info() const
 {
-	std::cout << "Mark: " << mark << ", mileage: " << mileage << std::endl;
+	std::cout << "Vehicle with mark: " << mark << ", mileage: " << mileage << ", ";
 }
 
 void Car::info() const
 {
-	std::cout << "Is active: " << is_active << std::endl;
+	Vehicle::info();
+	std::cout << "Car with is active: " << (is_active ? "true" : "false") << std::endl;
 }
 
 void Bus::info() const
 {
-	std::cout << "Capacity: " << capacity << std::endl;
+	Vehicle::info();
+	std::cout << "Bus with capacity: " << capacity << std::endl;
 }
 
 void Garage::park(const std::shared_ptr<Vehicle>& vehicle)
@@ -40,8 +42,9 @@ void Garage::park(const std::shared_ptr<Vehicle>& vehicle)
 	vehicles.push_back(vehicle);
 }
 
-void Garage::printVehicle() const
+void Garage::printVehicles() const
 {
+	std::cout << "Vehicles: \n" << std::endl;
 	for (int i = 0; i < vehicles.size(); i++)
 	{
 		vehicles.at(i)->info();
